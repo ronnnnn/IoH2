@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ToolTabStyle" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#f44336</item>
+    </style>
+
+
 </resources>
