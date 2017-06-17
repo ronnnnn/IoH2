@@ -33,7 +33,7 @@
                 android:layout_height="400dp">
 
                 <LinearLayout
-                    android:id="@+id/1"
+                    android:id="@+id/one"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -92,7 +92,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/2"
+                    android:id="@+id/two"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -120,7 +120,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/3"
+                    android:id="@+id/three"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -162,7 +162,8 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom" />
 
         </LinearLayout>
     </TabHost>
