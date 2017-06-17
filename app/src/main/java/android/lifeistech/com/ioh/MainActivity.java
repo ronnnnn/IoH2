@@ -1,5 +1,6 @@
 package android.lifeistech.com.ioh;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout.setupWithViewPager(viewPager);
 
+        Intent intent = new Intent(this,StartActivity.class);
+        startActivity(intent);
+
 
     }
+
 }
