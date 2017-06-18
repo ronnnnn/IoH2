@@ -12,159 +12,82 @@
     tools:context="android.lifeistech.com.ioh.StartActivity"
     android:background="#81D4FA">
 
-    <TabHost
-        android:layout_width="200dip"
-        android:layout_height="300dip"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/one"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#2196F3"
+            android:weightSum="1">
 
-            <FrameLayout
-                android:id="@android:id/tabcontent"
+            <TextView
+                android:text="ハンガーにかける"
                 android:layout_width="match_parent"
-                android:layout_height="400dp">
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_margin="10dp" />
 
-                <LinearLayout
-                    android:id="@+id/one"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:background="#2196F3"
-                    android:weightSum="1">
-
-                    <TextView
-                        android:text="ハンガーにかける"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView"
-                        android:textColor="@android:color/background_light"
-                        android:textStyle="bold"
-                        android:textSize="30sp" />
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:layout_weight="0.17">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/icon64"
-                            android:id="@+id/imageView3" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/icforward24dp"
-                            android:id="@+id/imageView2"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/icon_020802"
-                            android:id="@+id/imageView" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:text="ハンガーの水センサーが　　反応すると自動でタイマー　起動。その場所の天気と　　気温、風速から予想乾燥時間を計算。天候が悪くなる場合は部屋干しモードになります。"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView2"
-                        android:gravity="center"
-                        android:layout_marginTop="30dp"
-                        android:textSize="24sp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:textColor="@android:color/background_light" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/two"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:text="通知"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView4"
-                        android:textSize="30sp"
-                        android:textColor="@android:color/background_light"
-                        android:textStyle="normal|bold" />
-
-                    <TextView
-                        android:text="予想乾燥時間を過ぎた時と洗濯物が乾いた時に通知。洗濯終了ボタンを押すと洗濯物が取り込まれたことになります。一週間後にアンケートを行うのでご協力お願いします。"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView3"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginTop="30dp"
-                        android:gravity="center"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/background_light" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/three"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:text="質問"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/background_light" />
-
-                    <TextView
-                        android:text="電話(SMS)：09012030715"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView7" />
-
-                    <TextView
-                        android:text="メール：tomomisafumi238＠gmail.com"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView8" />
-
-                    <Button
-                        android:text="完了"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/ok"
-                        android:onClick="ok"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/background_light"
-                        android:background="@android:color/holo_orange_light"
-                        android:layout_gravity="bottom|center_horizontal" />
-                </LinearLayout>
-            </FrameLayout>
-
-            <TabWidget
-                android:id="@android:id/tabs"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="bottom" />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="0.17">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icon64"
+                    android:id="@+id/imageView3" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icforward24dp"
+                    android:id="@+id/imageView2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icon_020802"
+                    android:id="@+id/imageView" />
+            </LinearLayout>
+
+            <TextView
+                android:text="ハンガーの水センサーが　　反応すると自動でタイマー　起動。その場所の天気と　　気温、風速から予想乾燥時間を計算。天候が悪くなる場合は部屋干しモードになります。"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:textSize="24sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@android:color/background_light" />
 
         </LinearLayout>
-    </TabHost>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/righttwo"
+            android:id="@+id/imageButton3"
+            android:layout_gravity="bottom|right"
+            android:background="@drawable/circular_progress_bar"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="next" />
+
+    </FrameLayout>
+
+
 </RelativeLayout>

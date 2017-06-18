@@ -1,6 +1,7 @@
 package android.lifeistech.com.ioh;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -28,5 +29,7 @@ public class OutsideFragment extends Fragment {
         progressBar.setMax(100);
         progressBar.setProgress(60);
     }
+
+
 
 }
