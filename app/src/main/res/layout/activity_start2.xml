@@ -21,7 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="#FF7043">
+            android:background="#FF7043"
+            android:layout_margin="3dp"
+            android:elevation="3dp">
 
             <TextView
                 android:text="通知"
@@ -56,7 +58,8 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/circular_progress_bar"
             android:layout_gravity="bottom|right"
-            android:onClick="nexttwo" />
+            android:onClick="nexttwo"
+            android:elevation="4dp" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -67,7 +70,8 @@
             android:layout_gravity="bottom|left"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
-            android:onClick="back" />
+            android:onClick="back"
+            android:elevation="4dp" />
 
     </FrameLayout>
 
