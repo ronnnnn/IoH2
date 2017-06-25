@@ -10,7 +10,7 @@ public class Start3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start3);
+        setContentView(R.layout.view_tutorial3);
     }
 
     public void backtwo(View v){

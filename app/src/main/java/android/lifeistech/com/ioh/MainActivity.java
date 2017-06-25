@@ -6,6 +6,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -14,14 +16,25 @@ public class MainActivity extends AppCompatActivity {
     boolean aBoolean;
     SharedPreferences plef;
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("天日干し"));
         tabLayout.addTab(tabLayout.newTab().setText("部屋干し"));
+
+
         ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressbar) ;
 
         ViewPager viewPager = (ViewPager)findViewById(R.id.viewpager);
@@ -35,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (!aBoolean) {
 
-            Intent intent = new Intent(this, StartActivity.class);
+            Intent intent = new Intent(this, TutorialFragment1.class);
             startActivity(intent);
 
         }else {
@@ -47,8 +60,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.Help:
+                // ボタンをタップした際の処理を記述
+                Intent intent = new Intent(this,TutorialActivity.class);
+                startActivity(intent);
+        }
+        return true;
+    }
+
+
+
     public void help(View v){
-        Intent intent = new Intent(this,StartActivity.class);
+        Intent intent = new Intent(this,TutorialActivity.class);
         startActivity(intent);
     }
 
