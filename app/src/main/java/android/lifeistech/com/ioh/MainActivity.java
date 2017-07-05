@@ -73,14 +73,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void help(View v){
-        Intent intent = new Intent(this,TutorialActivity.class);
+
+    public void data(View v){
+        Intent intent = new Intent(this,DataActivity.class);
         startActivity(intent);
     }
 
-    public void  calendar(View v){
-        Intent intent = new Intent(this,CalendarActivity.class);
-        startActivity(intent);
-    }
+
 
 }

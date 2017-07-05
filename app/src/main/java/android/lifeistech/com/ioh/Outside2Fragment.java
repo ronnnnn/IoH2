@@ -19,4 +19,6 @@ public class Outside2Fragment extends Fragment {
         return inflater.inflate(R.layout.fragment_outside2, container, false);
     }
 
+
+
 }
