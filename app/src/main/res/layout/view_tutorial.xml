@@ -18,14 +18,39 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right|center_vertical"
+            android:layout_gravity="bottom|right">
+
+            <TextView
+                android:text="右へスライド"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView12"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/righttwo"
+                android:id="@+id/imageView4" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/one"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="#2196F3"
             android:weightSum="1"
             android:layout_margin="3dp"
-            android:elevation="3dp">
+            android:elevation="3dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="400dp">
 
             <TextView
                 android:text="ハンガーにかける"
@@ -41,8 +66,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_weight="0.17">
+                android:gravity="center">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -78,18 +102,6 @@
                 android:textColor="@android:color/background_light" />
 
         </LinearLayout>
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/righttwo"
-            android:id="@+id/imageButton3"
-            android:layout_gravity="bottom|right"
-            android:background="@drawable/circular_progress_bar"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:onClick="next"
-            android:elevation="4dp" />
 
     </FrameLayout>
 

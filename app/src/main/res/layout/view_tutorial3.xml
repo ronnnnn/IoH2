@@ -15,50 +15,24 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#90A4AE"
         android:elevation="3dp"
         android:layout_margin="3dp">
-
-        <Button
-            android:text="完了"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ok"
-            android:onClick="ok"
-            android:textSize="18sp"
-            android:textColor="@android:color/background_light"
-            android:background="@android:color/holo_orange_light"
-            android:layout_gravity="bottom|right"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/lefttwo"
-            android:id="@+id/imageButton"
-            android:background="@drawable/circular_progress_bar"
-            android:layout_gravity="bottom|left"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:onClick="backtwo" />
-
-        <TextView
-            android:text="質問"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView5"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/background_light"
-            android:layout_margin="10dp" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp">
+            android:layout_height="400dp"
+            android:background="#90A4AE">
+
+            <TextView
+                android:text="質問"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/background_light"
+                android:layout_margin="10dp" />
 
             <TextView
                 android:text="内山　史也"
@@ -111,6 +85,33 @@
                 android:textColor="?android:attr/colorBackground"
                 android:gravity="center_horizontal"
                 android:layout_marginTop="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/frameLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="bottom">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="完了"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button2"
+                android:background="#FBC02D"
+                android:textColor="#FFFFFF"
+                android:onClick="ok"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
     </FrameLayout>

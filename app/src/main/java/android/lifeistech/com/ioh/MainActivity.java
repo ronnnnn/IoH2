@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("天日干し"));
-        tabLayout.addTab(tabLayout.newTab().setText("部屋干し"));
+
 
 
         ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressbar) ;
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (!aBoolean) {
 
-            Intent intent = new Intent(this, TutorialFragment1.class);
+            Intent intent = new Intent(this, TutorialActivity.class);
             startActivity(intent);
 
         }else {
@@ -76,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void help(View v){
         Intent intent = new Intent(this,TutorialActivity.class);
+        startActivity(intent);
+    }
+
+    public void  calendar(View v){
+        Intent intent = new Intent(this,CalendarActivity.class);
         startActivity(intent);
     }
 

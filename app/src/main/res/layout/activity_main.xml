@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         style="@style/ToolTabStyle"
-        app:tabTextColor="#000000"
+        app:tabTextColor="#FFFFFF"
         android:background="#00B0FF"
         android:elevation="3dp"/>
 

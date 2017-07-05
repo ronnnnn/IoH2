@@ -14,14 +14,33 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
-    @Override
+   // @Override
+    //public Fragment getItem(int position) {
+        //return new OutsideFragment();
+    //}
+
     public Fragment getItem(int position) {
-        return new OutsideFragment();
+        if(position == 0){
+            return  new OutsideFragment();
+
+        }else{
+            return  new Outside2Fragment();
+        }
     }
+
 
     @Override
     public int getCount() {
         return 2;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        if (position == 0) {
+            return "天日干し";
+        } else {
+            return "カレンダー";
+        }
     }
 
 }

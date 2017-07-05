@@ -19,7 +19,7 @@
         <LinearLayout
             android:id="@+id/two"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="400dp"
             android:orientation="vertical"
             android:background="#FF7043"
             android:layout_margin="3dp"
@@ -36,7 +36,7 @@
                 android:layout_margin="10dp" />
 
             <TextView
-                android:text="予想乾燥時間を過ぎた時と洗濯物が乾いた時に通知。洗濯終了ボタンを押すと洗濯物が取り込まれたことになります。一週間後にアンケートを行うのでご協力お願いします。"
+                android:text="予想乾燥時間を過ぎた時と洗濯物が乾いた時に通知。洗濯終了ボタンを押すと洗濯物が取り込まれたことになり、スタンプがもらえます。ます。一週間後にアンケートを行うのでご協力お願いします。"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"
@@ -49,29 +49,31 @@
 
         </LinearLayout>
 
-        <ImageButton
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/righttwo"
-            android:id="@+id/imageButton2"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/circular_progress_bar"
-            android:layout_gravity="bottom|right"
-            android:onClick="nexttwo"
-            android:elevation="4dp" />
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_gravity="bottom">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/lefttwo"
-            android:id="@+id/imageButton4"
-            android:background="@drawable/circular_progress_bar"
-            android:layout_gravity="bottom|left"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:onClick="back"
-            android:elevation="4dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/lefttwo"
+                android:id="@+id/imageView6" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/righttwo"
+                android:id="@+id/imageView5"
+                android:layout_gravity="right" />
+        </LinearLayout>
 
     </FrameLayout>
 

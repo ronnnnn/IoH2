@@ -2,10 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:title="設定"
-        android:id="@+id/Setting"
-        android:onClick="setting" />
+        android:id="@+id/Setting" />
     <item android:id="@+id/Help" android:icon="@android:drawable/ic_input_add"
-        android:title="ヘルプ"
-        android:onClick="help">
+        android:title="ヘルプ">
     </item>
 </menu>
