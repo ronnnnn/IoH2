@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "301578522269",
+    "firebase_url": "https://internet-of-hanger.firebaseio.com",
+    "project_id": "internet-of-hanger",
+    "storage_bucket": "internet-of-hanger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301578522269:android:e3b8ca0862b7edca",
+        "android_client_info": {
+          "package_name": "android.lifeistech.com.ioh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301578522269-otuuo6sn0rppeckao7i8bhn9ut2eopbt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwEic2MiSVaODwQLU2dvbdkel7Y5RMlqc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
