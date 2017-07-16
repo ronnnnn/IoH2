@@ -79,13 +79,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-                waterdata wd = dataSnapshot.getValue(waterdata.class);
+                int number1 = (int) dataSnapshot.getValue();
 
-                Log.d("logch0","=" + wd.ch1);
 
-                int i = (wd.ch0 + wd.ch1)/2;
+                //int i = (number1 + wd.number1)/2;
 
-                texthan.setText("" + i);
+                texthan.setText("" + number1);
 
             }
 
@@ -95,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
                 waterdata wd = dataSnapshot.getValue(waterdata.class);
 
-                int i = (wd.ch0 + wd.ch1)/2;
+                int i = (wd.number + wd.number1)/2;
 
                 texthan.setText("" + i);
 
