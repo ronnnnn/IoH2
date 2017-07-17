@@ -79,12 +79,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-                int number1 = (int) dataSnapshot.getValue();
+                int number = (int) dataSnapshot.getValue();
 
 
                 //int i = (number1 + wd.number1)/2;
 
-                texthan.setText("" + number1);
+                texthan.setText("" + number);
 
             }
 
