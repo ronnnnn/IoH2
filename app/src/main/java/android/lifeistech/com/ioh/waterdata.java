@@ -6,8 +6,8 @@ package android.lifeistech.com.ioh;
 
 public class waterdata {
 
-    int ch0;
-    int ch1;
+    int number;
+    int number1;
 
     //からのコンストラクタ
     public waterdata(){
@@ -16,16 +16,16 @@ public class waterdata {
 
     }
 
-    public waterdata(int ch0,int ch1){
-        this.ch0 = ch0;
-        this.ch1 = ch1;
+    public waterdata(int number,int number1){
+        this.number = number;
+        this.number1 = number1;
     }
 
-    public int getch0(){return ch0;}
+    public int getnumber(){return number;}
 
-    public void setch0(int ch0){this.ch0 = ch0;}
+    public void setnumber(int ch0){this.number = number;}
 
-    public int getch1(){return ch1;}
+    public int getNumber1(){return number1;}
 
-    public void setch1(int ch1){this.ch1 = ch1;}
+    public void setNumber1(int ch1){this.number1 = number1;}
 }

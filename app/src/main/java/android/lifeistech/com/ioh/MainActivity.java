@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences plef;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference refMug = database.getReference("number");
+    DatabaseReference refMug = database.getReference();
 
     TextView texthan;
 
@@ -75,48 +75,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        refMug.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-
-                waterdata wd = dataSnapshot.getValue(waterdata.class);
-
-                Log.d("logch0","=" + wd.ch1);
-
-                int i = (wd.ch0 + wd.ch1)/2;
-
-                texthan.setText("" + i);
-
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-
-                waterdata wd = dataSnapshot.getValue(waterdata.class);
-
-                int i = (wd.ch0 + wd.ch1)/2;
-
-                texthan.setText("" + i);
-
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
 
     }
