@@ -90,42 +90,44 @@
                 android:paddingRight="20dp">
 
                 <ImageView
-                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/hungar"
                     android:id="@+id/imagehan"
                     android:layout_gravity="center_vertical"
-                    android:paddingRight="5dp" />
+                    android:paddingRight="5dp"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content" />
 
                 <TextView
                     android:text="やや濡れている"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/texthan"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_gravity="center_vertical"
                     android:textSize="18sp"
                     android:textColor="#039BE5"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:layout_width="wrap_content" />
 
                 <ImageView
-                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/sun"
                     android:id="@+id/imagewea"
-                    android:paddingRight="5dp" />
+                    android:paddingRight="5dp"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content" />
 
                 <TextView
                     android:text="晴れのち曇り"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textwea"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_gravity="center_vertical"
                     android:textSize="18sp"
                     android:paddingRight="5dp"
                     android:textColor="#FFB300"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:layout_width="wrap_content" />
 
             </LinearLayout>
 

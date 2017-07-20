@@ -44,9 +44,11 @@ public class OutsideFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressbar);
-        progressBar.setMax(100);
-        progressBar.setProgress(60);
+        final ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressbar);
+        progressBar.setMax(1000);
+
+
+        texthan = (TextView)view.findViewById(R.id.texthan) ;
 
 
         refMug.addChildEventListener(new ChildEventListener() {
@@ -56,6 +58,9 @@ public class OutsideFragment extends Fragment {
                 if (dataSnapshot.getKey().equals("number")) {
                     int wd = dataSnapshot.getValue(Integer.class);
                     texthan.setText(String.valueOf(wd));
+                    //texthan.setText("" + wd);
+                    progressBar.setProgress(wd);
+
                 }
 
             }
@@ -67,6 +72,7 @@ public class OutsideFragment extends Fragment {
                 if (dataSnapshot.getKey().equals("number")) {
                     int wd = dataSnapshot.getValue(Integer.class);
                     texthan.setText(String.valueOf(wd));
+                    progressBar.setProgress(wd);
                 }
 
 
@@ -87,6 +93,8 @@ public class OutsideFragment extends Fragment {
 
             }
         });
+
+
 
 
     }
