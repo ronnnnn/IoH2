@@ -132,8 +132,8 @@
             </LinearLayout>
 
             <Button
-                android:text="洗濯開始ボタン"
-                android:id="@+id/button"
+                android:text="洗濯完了ボタン"
+                android:id="@+id/click"
                 android:layout_height="wrap_content"
                 android:layout_width="280dp"
                 android:layout_gravity="center"
@@ -141,9 +141,21 @@
                 android:background="#FB8C00"
                 android:textColor="@android:color/background_light"
                 android:elevation="2dp"
-                android:padding="5dp" />
+                android:padding="5dp"
+                android:onClick="oc" />
+
+            <TextView
+                android:text="Powered by OpenWeatherMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView17"
+                android:gravity="bottom|right"
+                android:layout_gravity="bottom"
+                android:layout_weight="0.44"
+                android:onClick="link" />
 
         </LinearLayout>
 
     </LinearLayout>
+
 </FrameLayout>

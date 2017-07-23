@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference refMug = database.getReference();
 
     TextView texthan;
+    Button button;
 
 
     @Override
@@ -44,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        texthan = (TextView)findViewById(R.id.texthan) ;
 
 
 
@@ -94,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void data(View v){
+
+    public void oc(View v){
         Intent intent = new Intent(this,DataActivity.class);
         startActivity(intent);
     }
