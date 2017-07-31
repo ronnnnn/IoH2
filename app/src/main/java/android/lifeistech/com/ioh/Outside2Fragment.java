@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +24,7 @@ import com.google.firebase.database.DatabaseError;
 public class Outside2Fragment extends Fragment {
 
     //CalendarView calendarView = new CalendarView(this.getContext());
+    CalendarView calendarView;
 
     @Nullable
     @Override
@@ -36,8 +38,19 @@ public class Outside2Fragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //calendarView = (CalendarView)view.findViewById(R.id.calendar);
-        //calendarView.addOnCalendarSelectionListener(this);
+
+
+        calendarView = (CalendarView)view.findViewById(R.id.calendar) ;
+
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month,
+                                            int dayOfMonth) {
+                Toast.makeText(getContext(), ""+dayOfMonth,Toast.LENGTH_SHORT).show();// TODO Auto-generated method stub
+
+            }
+        });
 
 
 
