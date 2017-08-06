@@ -7,11 +7,8 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-    <CalendarView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/calendar"
-        android:minDate="01/01/2017"
-        android:layout_gravity="center_horizontal"
-        android:maxDate="12/31/2019" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listview" />
 </FrameLayout>

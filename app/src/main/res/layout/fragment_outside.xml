@@ -143,17 +143,6 @@
                 android:elevation="2dp"
                 android:padding="5dp" />
 
-            <TextView
-                android:text="Powered by OpenWeatherMap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView17"
-                android:gravity="bottom|right"
-                android:layout_gravity="bottom|right"
-                android:onClick="link"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp" />
-
         </LinearLayout>
 
     </LinearLayout>

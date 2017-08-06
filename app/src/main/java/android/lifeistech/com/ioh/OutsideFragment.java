@@ -87,7 +87,7 @@ public class OutsideFragment extends Fragment {
         // リクエストオブジェクトを作って
         Request request = new Request.Builder()
                 // URLを生成
-                .url("http://weather.livedoor.com/forecast/webservice/json/v1?city=130010")
+                .url("http://api.openweathermap.org/data/2.5/find?lat=43.067885&lon=141.355539&cnt=1&APPID=b6de807d926981bf3ac26ca77b1a2ae7")
                 .get()
                 .build();
         // クライアントオブジェクトを作成する
@@ -123,28 +123,36 @@ public class OutsideFragment extends Fragment {
         try {
             JSONObject jsonObject = new JSONObject(json);
             // {forecasts[] -> 0 -> {dataLabel, telop, tem}}
-            JSONArray forecastsArray = jsonObject.getJSONArray("forecasts");
+            JSONArray listArray = jsonObject.getJSONArray("list");
+
+            Log.d("json", listArray.toString());
             // 0番目のものが今日の天気なので取得する
-            JSONObject todayWeatherJson = forecastsArray.getJSONObject(0);
+            JSONObject todayWeatherJson = listArray.getJSONObject(0);
+
+            Log.d("json", todayWeatherJson.toString());
+            JSONArray Array = todayWeatherJson.getJSONArray("weather");
+
+            JSONObject WeatherJson = Array.getJSONObject(0);
+            Log.d("json", WeatherJson.toString());
             // 今日
-            String date = todayWeatherJson.getString("date");
+            //String date = todayWeatherJson.getString("date");
 
-            String telop = todayWeatherJson.getString("telop");
-            String dataLabel = todayWeatherJson.getString("dateLabel");
-            textwea.setText(telop + "\n" + dataLabel);
+            String telop = WeatherJson.getString("description");
+            //String dataLabel = todayWeatherJson.getString("dateLabel");
+            textwea.setText(telop); //+ "\n" + dataLabel
 
 
-            JSONObject temperatureJson = todayWeatherJson.getJSONObject("temperature");
-            JSONObject minJson = temperatureJson.get("min") != null ? temperatureJson.getJSONObject("min") : null;
-            String min = "";
-            if (minJson != null) {
-                min = minJson.getString("celsius");
-            }
-            JSONObject maxJson = temperatureJson.get("max") != null ? temperatureJson.getJSONObject("max") : null;
-            String max = "";
-            if (maxJson != null) {
-                max = maxJson.getString("celsius");
-            }
+            //JSONObject temperatureJson = todayWeatherJson.getJSONObject("temperature");
+            //JSONObject minJson = temperatureJson.get("min") != null ? temperatureJson.getJSONObject("min") : null;
+            //String min = "";
+            //if (minJson != null) {
+             //   min = minJson.getString("celsius");
+            //}
+            //JSONObject maxJson = temperatureJson.get("max") != null ? temperatureJson.getJSONObject("max") : null;
+            //String max = "";
+            //if (maxJson != null) {
+            //    max = maxJson.getString("celsius");
+            //}
             //mTempTextView.setText("最低気温:" + min + "〜最高気温:" + max);
 
         } catch (JSONException e) {
@@ -261,6 +269,9 @@ public class OutsideFragment extends Fragment {
                 temTV.setText(tem + "℃、" + hun + "%");
                 progressBar.setProgress(wd);
 
+
+                getWeather();
+
                 if (wd <= 5 && aBoolean && nBoolean) {
 
                     android.support.v7.app.NotificationCompat.Builder builder = new android.support.v7.app.NotificationCompat.Builder(getContext());
@@ -338,70 +349,6 @@ public class OutsideFragment extends Fragment {
         });
 
 
-    }
-
-
-    private void getData() {
-        String requestURL = "http://api.openweathermap.org/data/2.5/find?lat=43.067885&lon=141.355539&cnt=1";
-        String idescription;
-        try {
-
-            URL url = new URL(requestURL);
-
-            InputStream is = url.openConnection().getInputStream();
-
-            // JSON形式で結果が返るためパースのためにStringに変換する
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-            StringBuilder sb = new StringBuilder();
-            String line;
-            while (null != (line = reader.readLine())) {
-                sb.append(line);
-            }
-            String data = sb.toString();
-
-            try {
-                JSONObject rootObj = new JSONObject(data);
-                JSONArray listArray = rootObj.getJSONArray("list");
-
-                JSONObject obj = listArray.getJSONObject(0);
-
-                // 地点ID
-                int id = obj.getInt("id");
-
-                // 地点名
-                String cityName = obj.getString("name");
-
-                // 気温(Kから℃に変換)
-                JSONObject mainObj = obj.getJSONObject("main");
-                float currentTemp = (float) (mainObj.getDouble("temp") - 273.15f);
-
-                float minTemp = (float) (mainObj.getDouble("temp_min") - 273.15f);
-
-                float maxTemp = (float) (mainObj.getDouble("temp_max") - 273.15f);
-
-                // 湿度
-                if (mainObj.has("humidity")) {
-                    int humidity = mainObj.getInt("humidity");
-                }
-
-                // 取得時間
-                long time = obj.getLong("dt");
-
-                // 天気
-                weatherArray = obj.getJSONArray("weather");
-                weatherObj = weatherArray.getJSONObject(0);
-                idescription = weatherObj.getString("description");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            //textwea.setText(idescription);
-
-        } catch (MalformedURLException e) {
-
-        } catch (IOException e) {
-
-        }
     }
 
 

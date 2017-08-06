@@ -40,17 +40,17 @@ public class Outside2Fragment extends Fragment {
 
 
 
-        calendarView = (CalendarView)view.findViewById(R.id.calendar) ;
+        //calendarView = (CalendarView)view.findViewById(R.id.calendar) ;
 
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        //calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month,
-                                            int dayOfMonth) {
-                Toast.makeText(getContext(), ""+dayOfMonth,Toast.LENGTH_SHORT).show();// TODO Auto-generated method stub
-
-            }
-        });
+         //   @Override
+         //   public void onSelectedDayChange(CalendarView view, int year, int month,
+          //                                  int dayOfMonth) {
+         //       Toast.makeText(getContext(), ""+dayOfMonth,Toast.LENGTH_SHORT).show();// TODO Auto-generated method stub
+//
+         //   }
+        //});
 
 
 
