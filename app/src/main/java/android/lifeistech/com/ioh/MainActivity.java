@@ -52,10 +52,6 @@ public class MainActivity extends AppCompatActivity {
         String type = getIntent().getStringExtra(ARG_TYPE);
 
 
-
-
-
-
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tab_layout);
 
 
