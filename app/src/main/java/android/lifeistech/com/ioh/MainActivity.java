@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -32,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
     TextView texthan;
 
+    public static final String ARG_TYPE = "type";
+    public static final String ARG_ID = "id";
+
 
 
     @Override
@@ -44,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String id = getIntent().getStringExtra(ARG_ID);
+        String type = getIntent().getStringExtra(ARG_TYPE);
+
 
 
 

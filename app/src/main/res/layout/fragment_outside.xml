@@ -132,7 +132,7 @@
             </LinearLayout>
 
             <Button
-                android:text="洗濯完了ボタン"
+                android:text="洗濯開始ボタン"
                 android:id="@+id/click"
                 android:layout_height="wrap_content"
                 android:layout_width="280dp"
