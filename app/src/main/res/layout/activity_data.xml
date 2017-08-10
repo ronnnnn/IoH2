@@ -42,42 +42,16 @@
             android:paddingBottom="20dp"
             android:paddingTop="10dp">
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/verygood"
-                android:id="@+id/goodbutton"
-                android:background="@null"
-                android:onClick="good"
-                android:layout_marginRight="20dp" />
-
-            <ImageButton
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/notgood"
-                android:id="@+id/badbutton"
-                android:layout_width="wrap_content"
-                android:background="@null"
-                android:onClick="bad"
-                android:layout_marginLeft="20dp" />
         </LinearLayout>
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView16"
-            android:layout_marginTop="20dp"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:text="乾燥時間" />
-
-        <TextView
-            android:text="予想乾燥時間との差　2時間00分"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView18"
-            android:layout_marginTop="20dp"
-            android:textSize="18sp"
-            android:textColor="@android:color/black" />
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine|textPersonName"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:gravity="top"
+            android:hint="メモ" />
 
     </LinearLayout>
 
