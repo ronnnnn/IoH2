@@ -13,7 +13,7 @@ import java.util.List;
 public class dataAdapter extends ArrayAdapter<data> {
 
     List<data> mdatas;
-    Calendar cal = Calendar.getInstance();
+    //Calendar cal = Calendar.getInstance();
 
 
     public dataAdapter(Context context, int layoutResourseId,List<data> objects){
@@ -35,13 +35,13 @@ public class dataAdapter extends ArrayAdapter<data> {
 
     }
 
-    public int getContains(){
+    //public int getContains(){
 
-        int i = cal.get(Calendar.DATE);
+        //int i = cal.get(Calendar.DATE);
 
-        return mdatas.contains(i);
+        //return mdatas.contains(i);
 
-    }
+    //}
 
     public int getCount(){
 
