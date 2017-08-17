@@ -41,6 +41,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import static android.R.id.list;
 
 
 public class OutsideFragment extends Fragment {
@@ -56,18 +62,21 @@ public class OutsideFragment extends Fragment {
     int ch1;
     int tem;
     int hun;
+    int Time;
+    int i = 0;
     Button button;
-    JSONArray weatherArray;
-    JSONObject weatherObj;
 
     boolean aBoolean;
     boolean nBoolean;
-
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
     LocationManager mLocationManager;
+    Timer mTimer;
     private Handler mHandler;
+
+    List<data> mdatas;
+    data mdata;
 
     private void commit(boolean aBoolean, boolean nBoolean){
         editor.putBoolean("aboolean",aBoolean);
@@ -137,7 +146,7 @@ public class OutsideFragment extends Fragment {
             // 今日
             //String date = todayWeatherJson.getString("date");
 
-            String telop = WeatherJson.getString("description");
+            String telop = WeatherJson.getString("main");
             //String dataLabel = todayWeatherJson.getString("dateLabel");
             textwea.setText(telop); //+ "\n" + dataLabel
 
@@ -186,9 +195,10 @@ public class OutsideFragment extends Fragment {
         temTV = (TextView) view.findViewById(R.id.texttem);
         button = (Button) view.findViewById(R.id.click);
         mHandler = new Handler();
-
         editor.putBoolean("aBoolean",aBoolean);
         editor.commit();
+        mdatas = new ArrayList<data>();
+
 
         getBooleans();
         getWeather();
@@ -196,10 +206,50 @@ public class OutsideFragment extends Fragment {
         if (aBoolean) {
             button.setText("洗濯終了ボタン");
             Log.d("aboolean=",String.valueOf(aBoolean));
+            Time = 0;
+
+            mTimer = new Timer(false);
+            mTimer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    mHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Time++;
+                        }
+                    });
+                }
+            },0,1000);
 
         }else {
             button.setText("洗濯開始ボタン");
             Log.d("aboolean=",String.valueOf(aBoolean));
+
+            mdata = new data();
+
+            mdata.time = Time;
+            mdata.month = 8;//TODO get date
+            mdata.day = 18;
+            mdata.weather = textwea.getText().toString();
+            mdata.tem = tem;
+            mdata.hun = hun;
+            mdata.memo = "";
+
+            mdatas.add(mdata);
+
+            JSONArray array = new JSONArray();
+            for (int i = 0, length = list.size(); i < length; i++) {
+                try {
+                    array.put(i, list.get(i));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+            editor.putString("list", array.toString());  //key名を"list"としてシリアライズ化したデータを保存
+            editor.commit();
+
         }
 
 
@@ -270,8 +320,6 @@ public class OutsideFragment extends Fragment {
                 progressBar.setProgress(wd);
 
 
-                getWeather();
-
                 if (wd <= 5 && aBoolean && nBoolean) {
 
                     android.support.v7.app.NotificationCompat.Builder builder = new android.support.v7.app.NotificationCompat.Builder(getContext());
@@ -286,11 +334,22 @@ public class OutsideFragment extends Fragment {
                     manager.notify(0, builder.build());
                     nBoolean = false;
                     commit(aBoolean,nBoolean);
+
+                    mTimer.cancel();
                     return;
 
 
                 } else {
 
+                }
+
+                if(i == 0){
+                    getWeather();
+                    i++;
+                }else if (i == 9){
+                    i = 0;
+                }else {
+                    i++;
                 }
 
 
@@ -324,7 +383,7 @@ public class OutsideFragment extends Fragment {
             }
         };
 
-        button.setOnClickListener(new View.OnClickListener() {
+        /*button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -346,7 +405,7 @@ public class OutsideFragment extends Fragment {
                 }
 
             }
-        });
+        });*/
 
 
     }

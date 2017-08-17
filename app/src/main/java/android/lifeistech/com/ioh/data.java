@@ -9,18 +9,18 @@ public class data {
     public int month;
     public int day;
     public int time;
-    public int bigin;
-    public int finish;
+    public int tem;
+    public int hun;
     public String weather;
     public String memo;
 
-    public data(int month,int day,int time,int bigin,int finish,String weather,String memo){
+    public data(){
 
         this.month = month;
         this.day = day;
         this.time = time;
-        this.bigin =bigin;
-        this.finish = finish;
+        this.tem = tem;
+        this.hun = hun;
         this.weather = weather;
         this.memo = memo;
 

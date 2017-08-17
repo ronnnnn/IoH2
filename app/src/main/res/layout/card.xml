@@ -16,7 +16,7 @@
 
         <ImageView
             app:srcCompat="@drawable/snowstamp"
-            android:id="@+id/imageView7"
+            android:id="@+id/weaimageView"
             android:layout_marginLeft="10dp"
             android:layout_height="match_parent"
             android:layout_gravity="left|center_vertical"
@@ -32,14 +32,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView17"
+                android:id="@+id/datetextview"
                 android:textSize="22sp"
                 android:textColor="@android:color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView18"
+                android:id="@+id/timetextview"
                 android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>

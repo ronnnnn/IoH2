@@ -23,7 +23,7 @@
             android:text="7:28 ~ 16:17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView14"
+            android:id="@+id/timetextViews"
             android:textSize="50sp"
             android:textColor="@android:color/background_dark" />
 
@@ -31,8 +31,14 @@
             android:text="曇りのち晴れ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView15"
+            android:id="@+id/weathertextViews"
             android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/temTextView" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -49,7 +55,7 @@
             android:layout_height="match_parent"
             android:inputType="textMultiLine|textPersonName"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/memoText"
             android:gravity="top"
             android:hint="メモ" />
 
@@ -68,7 +74,7 @@
             android:text="7月26日"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView13"
+            android:id="@+id/datetextViews"
             android:layout_gravity="bottom"
             android:textSize="30sp"
             android:textColor="@android:color/background_light"
